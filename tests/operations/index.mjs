@@ -134,6 +134,8 @@ import "./tests/LevenshteinDistance.mjs";
 import "./tests/SwapCase.mjs";
 import "./tests/HKDF.mjs";
 import "./tests/GenerateDeBruijnSequence.mjs";
+
+import "./tests/Output.mjs";
 import "./tests/Pad.mjs";
 
 // Cannot test operations that use the File type yet

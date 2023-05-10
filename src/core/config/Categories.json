@@ -494,6 +494,7 @@
     {
         "name": "Other",
         "ops": [
+            "Byte Analyser",
             "Entropy",
             "Frequency distribution",
             "Index of Coincidence",

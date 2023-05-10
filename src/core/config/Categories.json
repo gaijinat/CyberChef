@@ -255,6 +255,7 @@
         "name": "Utils",
         "ops": [
             "Output",
+            "Pad",
             "Diff",
             "Remove whitespace",
             "Remove null bytes",

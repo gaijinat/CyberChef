@@ -243,6 +243,7 @@
     {
         "name": "Utils",
         "ops": [
+            "Trim",
             "Diff",
             "Remove whitespace",
             "Remove null bytes",

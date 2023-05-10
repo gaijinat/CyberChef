@@ -137,6 +137,9 @@ import "./tests/GenerateDeBruijnSequence.mjs";
 
 import "./tests/Output.mjs";
 import "./tests/Pad.mjs";
+import "./tests/PrependAppend.mjs";
+import "./tests/StoreRestoreInput.mjs";
+import "./tests/Trim.mjs";
 
 // Cannot test operations that use the File type yet
 // import "./tests/SplitColourChannels.mjs";

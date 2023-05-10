@@ -4,6 +4,17 @@
         "ops": []
     },
     {
+        "name": "Gaijin",
+        "ops": [
+            "Byte Analyser",
+            "Output",
+            "Pad",
+            "Prepend / Append",
+            "Store / Restore Input",
+            "Trim"
+        ]
+    },
+    {
         "name": "Data format",
         "ops": [
             "To Hexdump",
@@ -243,6 +254,10 @@
     {
         "name": "Utils",
         "ops": [
+            "Byte Analyser",
+            "Pad",
+            "Prepend / Append",
+            "Trim",
             "Diff",
             "Remove whitespace",
             "Remove null bytes",
@@ -483,6 +498,7 @@
     {
         "name": "Other",
         "ops": [
+            "Output",
             "Entropy",
             "Frequency distribution",
             "Index of Coincidence",
@@ -511,6 +527,7 @@
             "Subsection",
             "Merge",
             "Register",
+            "Store / Restore Input",
             "Label",
             "Jump",
             "Conditional Jump",

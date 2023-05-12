@@ -77,5 +77,3 @@ Removes all white-spaces and line breaks from the beginning, end or both of the 
 ## Licencing
 
 CyberChef is released under the [Apache 2.0 Licence](https://www.apache.org/licenses/LICENSE-2.0) and is covered by [Crown Copyright](https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/).
-
-The Gaijin.at version of CyberChef is released under the [Apache 2.0 Licence](https://www.apache.org/licenses/LICENSE-2.0).

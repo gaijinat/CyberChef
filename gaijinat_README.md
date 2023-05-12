@@ -30,7 +30,7 @@ The main differences are:
 - All represented printable ASCII characters will be shown in one line.
 - The characters are shown in a table, including their binary, hexadecimal and decimal representation, as well as the number and percentage of occurrences.
 
-"*ASCII Character Range for regular expressions*" can be used in regular epressions to match the text or to see the character encoding used. Example: A hexadecimal string written in lower case with all possible digits and letters results in the character range `[0-9a-f]` and a Base32 encoded text produce `[2-7A-Z=]`.
+"*ASCII character range for regular expressions*" can be used in regular epressions to match the text or to see the character encoding used. Example: A hexadecimal string written in lower case with all possible digits and letters results in the character range `[0-9a-f]` and a Base32 encoded text produce `[2-7A-Z=]`.
 
 
 ### Output

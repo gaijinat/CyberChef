@@ -159,7 +159,7 @@ class ByteAnalyser extends Operation {
         output += "</table>\n";
 
         output += "<dl><dt>Represented printable ASCII characters:</dt><dd>" + this.htmlEntities(stat.asciiCharsRepresented) + "</dd>";
-        output += "<dt>ASCII Character Range for regular expressions:</dt><dd>[" + this.htmlEntities(stat.asciiRegExCharRange) + "]</dd></dl>\n";
+        output += "<dt>ASCII character range for regular expressions:</dt><dd>[" + this.htmlEntities(stat.asciiRegExCharRange) + "]</dd></dl>\n";
 
         // Details
         if (sortCount) {

@@ -23,12 +23,14 @@ Get the source code for [Gaijin.at CyberChef on GitHub](https://github.com/gaiji
 
 Analyses the bytes in the input and displays statistics about them. A histogram shows the distribution of the individual bytes.
 
-This operation is very similar to the operation "*Frequency distribution*".
+This operation is similar to the operation "*Frequency distribution*".
 
 The main differences are:
 - A full-width histogram with tool-tips showing byte information.
 - All represented printable ASCII characters will be shown in one line.
 - The characters are shown in a table, including their binary, hexadecimal and decimal representation, as well as the number and percentage of occurrences.
+
+"*ASCII Character Range for regular expressions*" can be used in regular epressions to match the text or to see the character encoding used. Example: A hexadecimal string written in lower case with all possible digits and letters results in the character range `[0-9a-f]` and a Base32 encoded text produce `[2-7A-Z=]`.
 
 
 ### Output
@@ -74,6 +76,6 @@ Removes all white-spaces and line breaks from the beginning, end or both of the 
 
 ## Licencing
 
-The Gaijin.at version of CyberChef is released under the [Apache 2.0 Licence](https://www.apache.org/licenses/LICENSE-2.0).
+CyberChef is released under the [Apache 2.0 Licence](https://www.apache.org/licenses/LICENSE-2.0) and is covered by [Crown Copyright](https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/).
 
-The [original version of CyberChef](https://github.com/gchq/CyberChef) is released under the [Apache 2.0 Licence](https://www.apache.org/licenses/LICENSE-2.0) and is covered by [Crown Copyright](https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/).
+The Gaijin.at version of CyberChef is released under the [Apache 2.0 Licence](https://www.apache.org/licenses/LICENSE-2.0).

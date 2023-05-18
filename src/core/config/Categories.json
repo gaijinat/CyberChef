@@ -7,10 +7,12 @@
         "name": "Gaijin",
         "ops": [
             "Byte Analyser",
+            "Bytes to Decimal",
             "Output",
             "Pad",
             "Prepend / Append",
             "Store / Restore",
+            "Take bytes by position",
             "Trim"
         ]
     },
@@ -77,6 +79,7 @@
             "CSV to JSON",
             "JSON to CSV",
             "Avro to JSON",
+            "Bytes to Decimal",
             "CBOR Encode",
             "CBOR Decode"
         ]
@@ -282,6 +285,7 @@
             "Expand alphabet range",
             "Drop bytes",
             "Take bytes",
+            "Take bytes by position",
             "Pad lines",
             "Find / Replace",
             "Regular expression",

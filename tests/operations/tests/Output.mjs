@@ -1,6 +1,6 @@
 /**
  * @author gaijinat [web@gaijin.at]
- * @copyright Crown Copyright 2018
+ * @copyright Crown Copyright 2023
  * @license Apache-2.0
  */
 import TestRegister from "../../lib/TestRegister.mjs";

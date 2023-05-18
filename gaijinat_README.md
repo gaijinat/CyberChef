@@ -33,6 +33,13 @@ The main differences are:
 "*ASCII character range for regular expressions*" can be used in regular epressions to match the text or to see the character encoding used. Example: A hexadecimal string written in lower case with all possible digits and letters results in the character range `[0-9a-f]` and a Base32 encoded text produce `[2-7A-Z=]`.
 
 
+### Bytes to Decimal
+
+Converts one or more bytes to a decimal number.
+
+The bytes at the specified offset are converted to an unsigned integer depending on their length (Byte, Word, DWord or QWord).
+
+
 ### Output
 
 Outputs the entered text. This is useful to output text with stored registers.
@@ -55,7 +62,7 @@ Adds the specified text to the beginning and/or end of each line, character or t
 Includes support for simple strings and extended strings (which support \\n, \\r, \\t, \\b, \\f and escaped hex bytes using \\x notation, e.g. \\x00 for a null byte).
 
 
-### Store / Restore Input
+### Store / Restore
 
 Stores the input value and restores it later as output.
 
@@ -66,6 +73,15 @@ Stores the input value and restores it later as output.
 You should deactivate '*Auto Bake*' for this operation.
 
 This operation can be useful if you need to process the original input - or any other value - with different operations. The inputs can be stored and restored inside and outside of a `Fork` or `Subsection`.
+
+
+### Take bytes by position
+
+Takes a slice of the specified number of bytes from the data. Negative values are allowed.
+
+The data's start position (offset) is taken from a position in the data. The postion must be a Byte, Word, DWord or QWord integer value.
+
+Example: A file header contains the position of a UNIX timestamp at offset 40 as a 16-bit integer. With `40` as `Position Start`, `2 (Word)` as `Position Length` and the `Length` `4`, the timestamp is output.
 
 
 ### Trim

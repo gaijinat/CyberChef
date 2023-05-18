@@ -135,10 +135,12 @@ import "./tests/SwapCase.mjs";
 import "./tests/HKDF.mjs";
 import "./tests/GenerateDeBruijnSequence.mjs";
 
+import "./tests/BytesToDecimal.mjs";
 import "./tests/Output.mjs";
 import "./tests/Pad.mjs";
 import "./tests/PrependAppend.mjs";
 import "./tests/StoreRestore.mjs";
+import "./tests/TakeBytesByPosition.mjs";
 import "./tests/Trim.mjs";
 
 // Cannot test operations that use the File type yet

@@ -10,7 +10,7 @@
             "Output",
             "Pad",
             "Prepend / Append",
-            "Store / Restore Input",
+            "Store / Restore",
             "Trim"
         ]
     },
@@ -527,7 +527,7 @@
             "Subsection",
             "Merge",
             "Register",
-            "Store / Restore Input",
+            "Store / Restore",
             "Label",
             "Jump",
             "Conditional Jump",

@@ -20,7 +20,7 @@ class BytesToDecimal extends Operation {
 
         this.name = "Bytes to Decimal";
         this.module = "Default";
-        this.description = "Converts one or more bytes to a decimal number.<br><br>The bytes at the specified offset are converted to an unsigned integer depending on their length (Byte, Word, DWord or QWord).";
+        this.description = "Converts one or more bytes to a decimal number.<br><br>The bytes at the specified offset are converted to an unsigned integer depending on their length (Byte, Word or DWord). QWords are converted to a signed integer.";
         this.infoURL = "";
         this.inputType = "ArrayBuffer";
         this.outputType = "string";

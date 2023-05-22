@@ -59,7 +59,15 @@ Example: Assuming `Position` is set to `Start`, `Length` is `3` and `String` is 
 ### Prepend / Append
 
 Adds the specified text to the beginning and/or end of each line, character or the entire input.
+
 Includes support for simple strings and extended strings (which support \\n, \\r, \\t, \\b, \\f and escaped hex bytes using \\x notation, e.g. \\x00 for a null byte).
+
+
+### Refang URL
+
+Takes a defanged Universal Resource Locator (URL) and "Refangs" it. This is the opposite of the operation "Defang URL".
+
+Additionally, `[DOT]` and `[AT]` can be replaced and spaces can be removed.
 
 
 ### Store / Restore
@@ -79,7 +87,7 @@ This operation can be useful if you need to process the original input - or any 
 
 Takes a slice of the specified number of bytes from the data. Negative values are allowed.
 
-The data's start position (offset) is taken from a position in the data. The postion must be a Byte, Word, DWord or QWord integer value. QWords are converted to a signed integer.
+The start position (offset) is taken from a position in the data. The position must be a Byte, Word, DWord or QWord integer value. QWords are converted to a signed integer.
 
 Example: A file header contains the position of a UNIX timestamp at offset 40 as a 16-bit integer. With `40` as `Position Start`, `2 (Word)` as `Position Length` and the `Length` `4`, the timestamp is output.
 

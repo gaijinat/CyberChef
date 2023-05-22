@@ -20,7 +20,7 @@ class TakeBytesByPosition extends Operation {
 
         this.name = "Take bytes by position";
         this.module = "Default";
-        this.description = "Takes a slice of the specified number of bytes from the data. Negative values are allowed.<br><br>The data's start position (offset) is taken from a position in the data. The postion must be a Byte, Word, DWord or QWord integer value.<br><br>Example:<br>A file header contains the position of a UNIX timestamp at offset 40 as a 16-bit integer. With <code>40</code> as <code>Position Start</code>, <code>2 (Word)</code> as <code>Position Length</code> and the <code>Length</code> <code>4</code>, the timestamp is output.";
+        this.description = "Takes a slice of the specified number of bytes from the data. Negative values are allowed.<br><br>The data's start position (offset) is taken from a position in the data. The postion must be a Byte, Word, DWord or QWord integer value. QWords are converted to a signed integer.<br><br>Example:<br>A file header contains the position of a UNIX timestamp at offset 40 as a 16-bit integer. With <code>40</code> as <code>Position Start</code>, <code>2 (Word)</code> as <code>Position Length</code> and the <code>Length</code> <code>4</code>, the timestamp is output.";
         this.infoURL = "";
         this.inputType = "ArrayBuffer";
         this.outputType = "ArrayBuffer";

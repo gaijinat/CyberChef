@@ -5,7 +5,6 @@
  */
 
 import Operation from "../Operation.mjs";
-import {URL_REGEX, DOMAIN_REGEX} from "../lib/Extract.mjs";
 
 /**
  * RefangURL operation

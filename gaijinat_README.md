@@ -37,7 +37,7 @@ The main differences are:
 
 Converts one or more bytes to a decimal number.
 
-The bytes at the specified offset are converted to an unsigned integer depending on their length (Byte, Word, DWord or QWord).
+The bytes at the specified offset are converted to an unsigned integer depending on their length (Byte, Word or DWord). QWords are converted to a signed integer.
 
 
 ### Output
@@ -79,7 +79,7 @@ This operation can be useful if you need to process the original input - or any 
 
 Takes a slice of the specified number of bytes from the data. Negative values are allowed.
 
-The data's start position (offset) is taken from a position in the data. The postion must be a Byte, Word, DWord or QWord integer value.
+The data's start position (offset) is taken from a position in the data. The postion must be a Byte, Word, DWord or QWord integer value. QWords are converted to a signed integer.
 
 Example: A file header contains the position of a UNIX timestamp at offset 40 as a 16-bit integer. With `40` as `Position Start`, `2 (Word)` as `Position Length` and the `Length` `4`, the timestamp is output.
 

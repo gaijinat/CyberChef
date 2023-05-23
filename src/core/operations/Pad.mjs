@@ -68,10 +68,10 @@ class Pad extends Operation {
             input = input.split("\n");
             joinCharLenght = 1;
             for (let i = 0; i < input.length; i++) {
-                output += this.padEx(input[i], position, padLength, padCharacters) + "\n";
+                output += Pad.padEx(input[i], position, padLength, padCharacters) + "\n";
             }
         } else {
-            output = this.padEx(input, position, padLength, padCharacters);
+            output = Pad.padEx(input, position, padLength, padCharacters);
         }
 
         if (output === "") {
@@ -89,9 +89,11 @@ class Pad extends Operation {
      * @param {string} padCharacters
      * @returns {string}
      */
-    padEx(input, position, padLength, padCharacters) {
+    static padEx(input, position, padLength, padCharacters) {
         let spaceLength, padStartLength;
         let output = "";
+
+        if (padLength <= input.length) return input;
 
         if (position === "Start") {
             output = input.padStart(padLength, padCharacters);

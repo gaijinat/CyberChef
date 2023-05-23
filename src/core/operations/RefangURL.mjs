@@ -60,44 +60,43 @@ class RefangURL extends Operation {
     run(input, args) {
         const [dots, http, slashes, dotats, spaces] = args;
 
-        input = refangURL(input, dots, http, slashes, dotats, spaces);
+        input = RefangURL.refangURL(input, dots, http, slashes, dotats, spaces);
 
         return input;
     }
 
-}
-
-
-/**
- * Refangs a given URL
- *
- * @param {string} url
- * @param {boolean} dots
- * @param {boolean} http
- * @param {boolean} slashes
- * @param {boolean} dotats
- * @param {boolean} spaces
- * @returns {string}
- */
-function refangURL(url, dots, http, slashes, dotats, spaces) {
-    if (spaces) {
-        if (dots) url = url.replace(/ *\[ *\. *\] */g, ".");
-        if (http) url = url.replace(/hxxp/gi, "http");
-        if (slashes) url = url.replace(/ *\[ *:\/\/ *\] */g, "://");
-        if (dotats) {
-            url = url.replace(/ *\[ *DOT *\] */gi, ".");
-            url = url.replace(/ *\[ *AT *\] */gi, "@");
+    /**
+     * Refangs a given URL
+     *
+     * @param {string} url
+     * @param {boolean} dots
+     * @param {boolean} http
+     * @param {boolean} slashes
+     * @param {boolean} dotats
+     * @param {boolean} spaces
+     * @returns {string}
+     */
+    static refangURL(url, dots, http, slashes, dotats, spaces) {
+        if (spaces) {
+            if (dots) url = url.replace(/ *\[ *\. *\] */g, ".");
+            if (http) url = url.replace(/hxxp/gi, "http");
+            if (slashes) url = url.replace(/ *\[ *:\/\/ *\] */g, "://");
+            if (dotats) {
+                url = url.replace(/ *\[ *DOT *\] */gi, ".");
+                url = url.replace(/ *\[ *AT *\] */gi, "@");
+            }
+        } else {
+            if (dots) url = url.replace(/\[\.\]/g, ".");
+            if (http) url = url.replace(/hxxp/gi, "http");
+            if (slashes) url = url.replace(/\[:\/\/\]/g, "://");
+            if (dotats) {
+                url = url.replace(/\[DOT\]/gi, ".");
+                url = url.replace(/\[AT\]/gi, "@");
+            }
         }
-    } else {
-        if (dots) url = url.replace(/\[\.\]/g, ".");
-        if (http) url = url.replace(/hxxp/gi, "http");
-        if (slashes) url = url.replace(/\[:\/\/\]/g, "://");
-        if (dotats) {
-            url = url.replace(/\[DOT\]/gi, ".");
-            url = url.replace(/\[AT\]/gi, "@");
-        }
+        return url;
     }
-    return url;
+
 }
 
 export default RefangURL;

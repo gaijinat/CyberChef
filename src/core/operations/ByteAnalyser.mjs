@@ -66,7 +66,7 @@ class ByteAnalyser extends Operation {
         for (i = 0; i < 256; i++) {
             byteTable[i] = {
                 dec: i,
-                char: this.printableChar(i),
+                char: ByteAnalyser.printableChar(i),
                 hex: i.toString(16).toUpperCase().padStart(2, "0"),
                 bin: i.toString(2).padStart(8, "0"),
                 count: 0,
@@ -106,7 +106,7 @@ class ByteAnalyser extends Operation {
         byteNotRepresented = 256 - byteRepresented;
         byteNotRepresentedPercent = (byteNotRepresented * (100 / 256)).toFixed(2);
 
-        asciiRegExCharRange = this.getRegExCharRange(asciiCharsRepresented);
+        asciiRegExCharRange = ByteAnalyser.getRegExCharRange(asciiCharsRepresented);
 
         // console.log(byteTable);
 
@@ -143,7 +143,7 @@ class ByteAnalyser extends Operation {
             output += '<table style="border:0; table-layout:fixed; border-collapse:collapse; border-spacing:0; padding:0; width:100%;">';
             for (i = 0; i < 256; i++) {
                 output += '<td title="';
-                output += `Character ${stat.byteTable[i].dec.toString()} (0x${stat.byteTable[i].hex}) &quot;${this.htmlEntities(stat.byteTable[i].char)}&quot;\nCount: ${stat.byteTable[i].count.toLocaleString("en")} (${stat.byteTable[i].percent.toLocaleString("en")}%)`;
+                output += `Character ${stat.byteTable[i].dec.toString()} (0x${stat.byteTable[i].hex}) &quot;${ByteAnalyser.htmlEntities(stat.byteTable[i].char)}&quot;\nCount: ${stat.byteTable[i].count.toLocaleString("en")} (${stat.byteTable[i].percent.toLocaleString("en")}%)`;
                 output += '" style="vertical-align:bottom; padding:0; background-color: var(--';
                 if (i % 2) output += "primary"; else output += "secondary";
                 output += `-background-colour);"><div style="height:${(stat.byteTable[i].proportion * 2).toString()}px;background-color:var(--primary-font-colour);"></div></td>`;
@@ -158,19 +158,19 @@ class ByteAnalyser extends Operation {
         output += `<tr><td${clsr}>Number of bytes not represented:</td><td${clsr}><b>${stat.byteNotRepresented.toLocaleString("en")}</b></td><td${clsr}>(${stat.byteNotRepresentedPercent.toLocaleString("en")}%)</td></tr>`;
         output += "</table>\n";
 
-        output += "<dl><dt>Represented printable ASCII characters:</dt><dd>" + this.htmlEntities(stat.asciiCharsRepresented) + "</dd>";
-        output += "<dt>ASCII character range for regular expressions:</dt><dd>[" + this.htmlEntities(stat.asciiRegExCharRange) + "]</dd></dl>\n";
+        output += "<dl><dt>Represented printable ASCII characters:</dt><dd>" + ByteAnalyser.htmlEntities(stat.asciiCharsRepresented) + "</dd>";
+        output += "<dt>ASCII character range for regular expressions:</dt><dd>[" + ByteAnalyser.htmlEntities(stat.asciiRegExCharRange) + "]</dd></dl>\n";
 
         // Details
         if (sortCount) {
-            stat.byteTable.sort(this.compareByteTableItemsCount);
+            stat.byteTable.sort(ByteAnalyser.compareByteTableItemsCount);
         }
         output += '<table class="table table-hover table-sm table-bordered" style="table-layout:fixed; width:auto;">';
         output += `<tr><th${clsc}>Binary</th><th${clsc}>Hex</th><th${clsc}>Code</th><th${clsc}>Char</th><th${clsc}>Count</th><th${clsc}>Percent</th></tr>`;
         for (i = 0; i < 256; i++) {
             if (!showZeros && (stat.byteTable[i].count === 0)) continue;
             output += `<tr><td${clsr}>${stat.byteTable[i].bin}</td><td${clsr}>${stat.byteTable[i].hex}</td>`;
-            output += `<td${clsr}>${stat.byteTable[i].dec.toString()}</td><td${clsc}><b>${this.htmlEntities(stat.byteTable[i].char)}</b></td>`;
+            output += `<td${clsr}>${stat.byteTable[i].dec.toString()}</td><td${clsc}><b>${ByteAnalyser.htmlEntities(stat.byteTable[i].char)}</b></td>`;
             output += `<td${clsr}>${stat.byteTable[i].count.toLocaleString("en")}</td><td${clsr}>${stat.byteTable[i].percent.toLocaleString("en")}</td></tr>`;
         }
         output += "</table>\n";
@@ -185,7 +185,7 @@ class ByteAnalyser extends Operation {
      * @param {UInt8} charCode
      * @returns {html}
      */
-    printableChar(charCode) {
+    static printableChar(charCode) {
         if (charCode < 32) return " ";
         if (charCode === 127) return " ";
 
@@ -195,7 +195,7 @@ class ByteAnalyser extends Operation {
     /**
      * Compare byteTable items by count.
      */
-    compareByteTableItemsCount(a, b) {
+    static compareByteTableItemsCount(a, b) {
         if (a.count > b.count) {
             return -1;
         } else if (a.count < b.count) {
@@ -211,7 +211,7 @@ class ByteAnalyser extends Operation {
      * @param {string} string
      * @returns {string}
      */
-    htmlEntities(string) {
+    static htmlEntities(string) {
         return String(string).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
     }
 
@@ -221,7 +221,7 @@ class ByteAnalyser extends Operation {
      * @param {string} string - must contain only unique characters sorted by character code
      * @returns {string}
      */
-    getRegExCharRange(string) {
+    static getRegExCharRange(string) {
         if (string.length < 3) return string;
 
         let current,
@@ -236,7 +236,7 @@ class ByteAnalyser extends Operation {
 
             // Byte is not a digit or letter ("0-9A-Za-z")
             // A regex range with other characters is confusing, e.g. "!-7" or "X-c"
-            if (!this.byteIsDigitOrLetter(current)) {
+            if (!ByteAnalyser.byteIsDigitOrLetter(current)) {
                 result += string[i];
                 last = 0;
                 inRange = false;
@@ -246,7 +246,7 @@ class ByteAnalyser extends Operation {
             // Get next byte and check if it is a digit or letter
             if (i < string.length) {
                 next = string.charCodeAt(i + 1);
-                if (!this.byteIsDigitOrLetter(next)) next = 0;
+                if (!ByteAnalyser.byteIsDigitOrLetter(next)) next = 0;
             } else {
                 next = 0;
             }
@@ -267,7 +267,7 @@ class ByteAnalyser extends Operation {
             inRange = false;
         }
 
-        result = this.escapeRegExSpecialChars(result);
+        result = ByteAnalyser.escapeRegExSpecialChars(result);
 
         return resultRange + result;
     }
@@ -278,7 +278,7 @@ class ByteAnalyser extends Operation {
      * @param {string} string
      * @returns {string}
      */
-    escapeRegExSpecialChars(string) {
+    static escapeRegExSpecialChars(string) {
         const specialChars = "\\^$?*+-.|()[]{}";
         let result = "";
 
@@ -299,7 +299,7 @@ class ByteAnalyser extends Operation {
      * @param {byte} byte
      * @returns {boolean}
      */
-    byteIsDigitOrLetter(byte) {
+    static byteIsDigitOrLetter(byte) {
         // 0-9 = 48-57, A-Z = 65-90, a-z = 97-122
         return ((byte >= 48 && byte <= 57) || (byte >= 65 && byte <= 90) || (byte >= 97 && byte <= 122));
     }

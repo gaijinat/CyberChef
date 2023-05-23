@@ -63,9 +63,9 @@ Adds the specified text to the beginning and/or end of each line, character or t
 Includes support for simple strings and extended strings (which support \\n, \\r, \\t, \\b, \\f and escaped hex bytes using \\x notation, e.g. \\x00 for a null byte).
 
 
-### Refang URL
+### Refang URLs or IP Addresses
 
-Takes a defanged Universal Resource Locator (URL) and "Refangs" it. This is the opposite of the operation "Defang URL".
+Takes a defanged Universal Resource Locator (URL) or IP address and 'Refangs' it. This is the counterpart to the 'Defang URL' and 'Defang IP Addresses' operations.
 
 Additionally, `[DOT]` and `[AT]` can be replaced and spaces can be removed.
 

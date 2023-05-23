@@ -12,7 +12,7 @@
             "Pad",
             "Prepend / Append",
             "Store / Restore",
-            "Refang URL",
+            "Refang URLs or IP Addresses",
             "Take bytes by position",
             "Trim"
         ]
@@ -241,8 +241,8 @@
             "Encode NetBIOS Name",
             "Decode NetBIOS Name",
             "Defang URL",
-            "Refang URL",
-            "Defang IP Addresses"
+            "Defang IP Addresses",
+            "Refang URLs or IP Addresses"
         ]
     },
     {

@@ -226,7 +226,8 @@
             "Encode NetBIOS Name",
             "Decode NetBIOS Name",
             "Defang URL",
-            "Defang IP Addresses"
+            "Defang IP Addresses",
+            "Refang URLs or IP Addresses"
         ]
     },
     {
